@@ -6,6 +6,8 @@ public class MapScript : MonoBehaviour {
     public GameObject mapPiece;
     public GameObject roadPiece;
     public GameObject centerPiece;
+    public GameObject filler;
+    public GameObject spawn;
     public int rows;
     public int cols;
 	// Use this for initialization
@@ -17,17 +19,57 @@ public class MapScript : MonoBehaviour {
                 Instantiate(mapPiece, new Vector3(j*Mathf.Sqrt(2), i, i), Quaternion.Euler(45,0,0));
                 if (i != rows-1)
                 {
-                    Instantiate(roadPiece, new Vector3(j * Mathf.Sqrt(2), i + 0.5f, i + 0.5f), Quaternion.Euler(45, 0, 0));
+                    if (j == 0 || j == cols - 1)
+                    {
+                        if (i == 0 && j == 0 || i == rows - 2 && j == cols - 1)
+                        {
+                            Instantiate(roadPiece, new Vector3(j * Mathf.Sqrt(2), i + 0.5f, i + 0.5f), Quaternion.Euler(45, 0, 0));
+                        }
+                        else {
+                            Instantiate(filler, new Vector3(j * Mathf.Sqrt(2), i + 0.5f, i + 0.5f), Quaternion.Euler(45, 0, 0));
+                        }
+                    }
+                    else {
+                        Instantiate(roadPiece, new Vector3(j * Mathf.Sqrt(2), i + 0.5f, i + 0.5f), Quaternion.Euler(45, 0, 0));
+                    }
                 }
                 if (j != cols - 1)
                 {
-                    Instantiate(roadPiece, new Vector3((j + 0.5f) * Mathf.Sqrt(2) , i, i), Quaternion.Euler(45, 0, 90));
+                    if (i == 0 || i == rows - 1)
+                    {
+                        Instantiate(filler, new Vector3((j + 0.5f) * Mathf.Sqrt(2), i, i), Quaternion.Euler(45, 0, 90));
+                    }
+                    else if(j != cols - 2 && j != 0)
+                    {
+                        Instantiate(filler, new Vector3((j + 0.5f) * Mathf.Sqrt(2), i, i), Quaternion.Euler(45, 0, 90));
+                    }
+                    else if(j == 0 && i % 2 != 0 || j == cols-2 && i%2 == 0)
+                    {
+                        Instantiate(filler, new Vector3((j + 0.5f) * Mathf.Sqrt(2), i, i), Quaternion.Euler(45, 0, 90));
+                    }
+                    else {
+                        Instantiate(roadPiece, new Vector3((j + 0.5f) * Mathf.Sqrt(2), i, i), Quaternion.Euler(45, 0, 90));
+                    }
                 }
                 if(i != rows - 1 && j != cols - 1)
                 {
                     Instantiate(centerPiece, new Vector3((j + 0.5f) * Mathf.Sqrt(2), i + 0.5f, i + 0.5f), Quaternion.Euler(45, 0, 0));
                 }
             }
+        }
+        for(float i = 0; i < rows; ++i)
+        {
+            if (i == rows - 2)
+            {
+                Instantiate(spawn, new Vector3(rows * Mathf.Sqrt(2) - 0.5f, i + 0.5f, i + 0.5f), Quaternion.Euler(45, 0, 0));
+            }
+            else if (i != rows - 1)
+            {
+                Instantiate(filler, new Vector3(rows * Mathf.Sqrt(2) - 0.5f, i + 0.5f, i + 0.5f), Quaternion.Euler(45, 0, 0));
+            }
+            var temp = (GameObject)Instantiate(mapPiece, new Vector3(rows * Mathf.Sqrt(2) - 0.5f, i, i), Quaternion.Euler(45, 0, 0));
+                var script = temp.GetComponent<CreateTower>();
+                script.setOccupied();
         }
 	}
 	

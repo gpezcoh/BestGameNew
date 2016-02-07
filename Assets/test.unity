@@ -115,8 +115,10 @@ MonoBehaviour:
   mapPiece: {fileID: 113662, guid: ebce4ad7212a2e74e88b6b365e178c6a, type: 2}
   roadPiece: {fileID: 186520, guid: 2ccf01c6358e9814a93e5b584f6247c4, type: 2}
   centerPiece: {fileID: 134222, guid: 8c406e0a6881e0e47ba9e4128de26f44, type: 2}
-  rows: 5
-  cols: 5
+  filler: {fileID: 183204, guid: c49488a3006463e44bcae77450cd4141, type: 2}
+  spawn: {fileID: 123218, guid: b8536d4a694bb804db63b4cb047732a8, type: 2}
+  rows: 4
+  cols: 4
 --- !u!4 &563350451
 Transform:
   m_ObjectHideFlags: 0

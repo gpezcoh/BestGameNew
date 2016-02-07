@@ -14,6 +14,11 @@ public class CreateTower : MonoBehaviour {
         MakeTower(this.gameObject);
     }
 
+    public void setOccupied()
+    {
+        occupied = true;
+    }
+
     void MakeTower(GameObject piece)
     {
         if (!occupied)
