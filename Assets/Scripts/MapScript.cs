@@ -53,7 +53,11 @@ public class MapScript : MonoBehaviour {
                 }
                 if(i != rows - 1 && j != cols - 1)
                 {
-                    Instantiate(centerPiece, new Vector3((j + 0.5f) * Mathf.Sqrt(2), i + 0.5f, i + 0.5f), Quaternion.Euler(45, 0, 0));
+                    var center = (GameObject)Instantiate(centerPiece, new Vector3((j + 0.5f) * Mathf.Sqrt(2), i + 0.5f, i + 0.5f), Quaternion.Euler(45, 0, 0));
+                    if(j == 0 && i != 0 || j == cols - 2 && i != rows - 2)
+                    {
+                        center.GetComponent<CenterTrigger>().isEnd = true;
+                    }
                 }
             }
         }

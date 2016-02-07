@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 427020}
   - 33: {fileID: 3386036}
   - 23: {fileID: 2379412}
+  - 114: {fileID: 11404316}
   m_Layer: 0
   m_Name: spawn 1
   m_TagString: Untagged
@@ -62,6 +63,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 123218}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &11404316
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 123218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96cac15c628537a499cf3ecac1385361, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 193008, guid: d3f319e2862f1e44da45a8f4b967ac0d, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -73,6 +86,10 @@ Prefab:
       propertyPath: m_Name
       value: spawn
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 193008, guid: d3f319e2862f1e44da45a8f4b967ac0d, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 123218}
