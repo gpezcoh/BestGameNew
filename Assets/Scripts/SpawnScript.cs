@@ -14,7 +14,7 @@ public class SpawnScript : MonoBehaviour {
 	void Update () {
         if (Input.GetKeyDown("space"))
         {
-            Invoke("Spawn", 2);
+            Invoke("Spawn", 0.5f);
         }
 	}
 
@@ -22,4 +22,5 @@ public class SpawnScript : MonoBehaviour {
     {
         Instantiate(enemy, new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z - 0.3f), Quaternion.Euler(45, 0, 0));
     }
+
 }

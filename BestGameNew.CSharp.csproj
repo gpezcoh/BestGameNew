@@ -62,12 +62,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\BaseScript.cs" />
+    <Compile Include="Assets\Scripts\BulletScript.cs" />
     <Compile Include="Assets\Scripts\CameraScript.cs" />
     <Compile Include="Assets\Scripts\CenterTrigger.cs" />
     <Compile Include="Assets\Scripts\CreateTower.cs" />
     <Compile Include="Assets\Scripts\EnemyScript.cs" />
     <Compile Include="Assets\Scripts\MapScript.cs" />
     <Compile Include="Assets\Scripts\SpawnScript.cs" />
+    <Compile Include="Assets\Scripts\TowerFire.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

@@ -1,41 +1,41 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &123218
+--- !u!1 &165224
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 427020}
-  - 33: {fileID: 3386036}
-  - 23: {fileID: 2379412}
-  - 114: {fileID: 11404316}
+  - 4: {fileID: 416214}
+  - 33: {fileID: 3371090}
+  - 23: {fileID: 2375284}
+  - 114: {fileID: 11477558}
   m_Layer: 0
-  m_Name: spawn 1
+  m_Name: spawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &427020
+--- !u!4 &416214
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 123218}
+  m_GameObject: {fileID: 165224}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071067}
-  m_LocalPosition: {x: 1, y: 0, z: 0}
+  m_LocalPosition: {x: 1.1, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 0.5, z: 0.1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!23 &2379412
+--- !u!23 &2375284
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 123218}
+  m_GameObject: {fileID: 165224}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 0
@@ -56,41 +56,33 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!33 &3386036
+--- !u!33 &3371090
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 123218}
+  m_GameObject: {fileID: 165224}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &11404316
+--- !u!114 &11477558
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 123218}
+  m_GameObject: {fileID: 165224}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 96cac15c628537a499cf3ecac1385361, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 193008, guid: d3f319e2862f1e44da45a8f4b967ac0d, type: 2}
+  enemy: {fileID: 186682, guid: 4dadebedab258934f95733c3b1eabd59, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 0}
-      propertyPath: m_Name
-      value: spawn
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: enemy
-      value: 
-      objectReference: {fileID: 193008, guid: d3f319e2862f1e44da45a8f4b967ac0d, type: 2}
+    m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 123218}
+  m_RootGameObject: {fileID: 165224}
   m_IsPrefabParent: 1

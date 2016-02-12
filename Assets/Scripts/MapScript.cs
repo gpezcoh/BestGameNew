@@ -8,6 +8,7 @@ public class MapScript : MonoBehaviour {
     public GameObject centerPiece;
     public GameObject filler;
     public GameObject spawn;
+    public GameObject homeBase;
     public int rows;
     public int cols;
 	// Use this for initialization
@@ -65,16 +66,30 @@ public class MapScript : MonoBehaviour {
         {
             if (i == rows - 2)
             {
-                Instantiate(spawn, new Vector3(rows * Mathf.Sqrt(2) - 0.5f, i + 0.5f, i + 0.5f), Quaternion.Euler(45, 0, 0));
+                Instantiate(spawn, new Vector3(cols * Mathf.Sqrt(2) - 0.5f, i + 0.5f, i + 0.5f), Quaternion.Euler(45, 0, 0));
             }
             else if (i != rows - 1)
             {
-                Instantiate(filler, new Vector3(rows * Mathf.Sqrt(2) - 0.5f, i + 0.5f, i + 0.5f), Quaternion.Euler(45, 0, 0));
+                Instantiate(filler, new Vector3(cols * Mathf.Sqrt(2) - 0.5f, i + 0.5f, i + 0.5f), Quaternion.Euler(45, 0, 0));
             }
-            var temp = (GameObject)Instantiate(mapPiece, new Vector3(rows * Mathf.Sqrt(2) - 0.5f, i, i), Quaternion.Euler(45, 0, 0));
+            var temp = (GameObject)Instantiate(mapPiece, new Vector3(cols * Mathf.Sqrt(2) - 0.5f, i, i), Quaternion.Euler(45, 0, 0));
                 var script = temp.GetComponent<CreateTower>();
                 script.setOccupied();
         }
-	}
+        for (float i = 0; i < rows; ++i)
+        {
+            if (i == 0)
+            {
+                Instantiate(homeBase , new Vector3(0 - 0.5f, i + 0.5f, i + 0.5f), Quaternion.Euler(45, 0, 0));
+            }
+            else if (i != rows - 1)
+            {
+                Instantiate(filler, new Vector3(0 - 0.5f, i + 0.5f, i + 0.5f), Quaternion.Euler(45, 0, 0));
+            }
+            var temp = (GameObject)Instantiate(mapPiece, new Vector3(0 - 0.5f, i, i), Quaternion.Euler(45, 0, 0));
+            var script = temp.GetComponent<CreateTower>();
+            script.setOccupied();
+        }
+    }
 	
 }

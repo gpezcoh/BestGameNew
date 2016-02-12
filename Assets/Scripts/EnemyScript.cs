@@ -7,11 +7,15 @@ public class EnemyScript : MonoBehaviour {
     public int rotate = 1;
     public bool turn = false;
     public Vector3 vec = Vector3.left;
+    public int health = 5;
+
+    public GameObject healthBar;
+
     // Update is called once per frame
     void Update () {
         if (turn)
         {
-            Invoke("Rotate", 0.4f);
+            Invoke("Rotate", 0.3f);
             turn = false;
         }
         Move();
@@ -21,6 +25,11 @@ public class EnemyScript : MonoBehaviour {
     {
         transform.position += vec * speed * Time.deltaTime;
     }
+
+   // void OnTriggerEnter(Collider other)
+    //{
+
+//    }
 
     void Rotate()
     {
