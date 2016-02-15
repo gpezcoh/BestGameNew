@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class MapScript : MonoBehaviour {
 
@@ -9,6 +10,9 @@ public class MapScript : MonoBehaviour {
     public GameObject filler;
     public GameObject spawn;
     public GameObject homeBase;
+    public Text health;
+    public Text gold;
+    public Dropdown canvas;
     public int rows;
     public int cols;
 	// Use this for initialization
@@ -17,7 +21,9 @@ public class MapScript : MonoBehaviour {
         {
             for(float j = 0; j < cols; ++j)
             {
-                Instantiate(mapPiece, new Vector3(j*Mathf.Sqrt(2), i, i), Quaternion.Euler(45,0,0));
+                GameObject cube = (GameObject)Instantiate(mapPiece, new Vector3(j*Mathf.Sqrt(2), i, i), Quaternion.Euler(45,0,0));
+                cube.GetComponent<CreateTower>().dropdown = canvas;
+                cube.GetComponent<CreateTower>().gold = gold;
                 if (i != rows-1)
                 {
                     if (j == 0 || j == cols - 1)
@@ -75,12 +81,16 @@ public class MapScript : MonoBehaviour {
             var temp = (GameObject)Instantiate(mapPiece, new Vector3(cols * Mathf.Sqrt(2) - 0.5f, i, i), Quaternion.Euler(45, 0, 0));
                 var script = temp.GetComponent<CreateTower>();
                 script.setOccupied();
+            script.dropdown = canvas;
+            script.gold = gold;
+
         }
         for (float i = 0; i < rows; ++i)
         {
             if (i == 0)
             {
-                Instantiate(homeBase , new Vector3(0 - 0.5f, i + 0.5f, i + 0.5f), Quaternion.Euler(45, 0, 0));
+                GameObject home = (GameObject)Instantiate(homeBase , new Vector3(0 - 0.5f, i + 0.5f, i + 0.5f), Quaternion.Euler(45, 0, 0));
+                home.GetComponent<BaseScript>().health = health;
             }
             else if (i != rows - 1)
             {
@@ -89,6 +99,9 @@ public class MapScript : MonoBehaviour {
             var temp = (GameObject)Instantiate(mapPiece, new Vector3(0 - 0.5f, i, i), Quaternion.Euler(45, 0, 0));
             var script = temp.GetComponent<CreateTower>();
             script.setOccupied();
+            script.dropdown = canvas;
+            script.gold = gold;
+
         }
     }
 	

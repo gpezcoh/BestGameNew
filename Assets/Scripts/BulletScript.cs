@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class BulletScript : MonoBehaviour {
 
     private GameObject target = null;
+    public Text gold;
     public float speed = 1f;
 
     void Update()
@@ -27,6 +29,7 @@ public class BulletScript : MonoBehaviour {
             if(other.GetComponent<EnemyScript>().health == 0)
             {
                 Destroy(other.gameObject);
+                changeGold();
             }
             Destroy(this.gameObject);
         }
@@ -35,5 +38,12 @@ public class BulletScript : MonoBehaviour {
 	public void Shooting(GameObject targ)
     {
         target = targ;
+    }
+
+    void changeGold()
+    {
+        int goldNum = int.Parse(gold.text);
+        goldNum += 10;
+        gold.text = goldNum.ToString();
     }
 }

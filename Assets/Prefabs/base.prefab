@@ -87,6 +87,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c39fb0e8756b754294ef723dbcecf40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UI: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -114,6 +115,15 @@ Prefab:
       propertyPath: m_Center.x
       value: -0.25
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: health
+      value: 
+      objectReference: {fileID: 11496434, guid: c08e027e83bdf1246a87332a2b53acc8,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: UI
+      value: 
+      objectReference: {fileID: 109582, guid: bd504301fcf2921488402f4fba962a2a, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 104466}
